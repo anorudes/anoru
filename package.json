@@ -1,10 +1,10 @@
 {
-  "name": "redux-easy-boilerplate",
+  "name": "about",
   "engines": {
     "node": ">=5.0"
   },
   "version": "3.2.0",
-  "description": "Start your project easy and fast with modern tools",
+  "description": "About me",
   "scripts": {
     "start": "rimraf dist && NODE_ENV=development node bin/server.js",
     "start:prod": "NODE_ENV=production node bin/server.js",
@@ -18,32 +18,9 @@
     "test": "NODE_PATH=./app mocha --require ./bin/test.js 'app/**/*spec.js'",
     "test:watch": "npm run test -- --watch"
   },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/anorudes/redux-easy-boilerplate.git"
-  },
-  "homepage": "http://anorudes.github.io/redux-easy-boilerplate/",
-  "bugs": "https://github.com/anorudes/redux-easy-boilerplate/issues",
-  "keywords": [
-    "react",
-    "reactjs",
-    "babel6",
-    "boilerplate",
-    "redux",
-    "hot",
-    "reload",
-    "hmr",
-    "live",
-    "edit",
-    "webpack"
-  ],
   "license": "MIT",
   "authors": [
     "Max Anoru (https://github.com/anorudes)",
-    "Andrey Keske (https://github.com/keske)"
-  ],
-  "contributors": [
-    "Ollipekka Jalonen (https://github.com/inertum)"
   ],
   "devDependencies": {
     "asset-require-hook": "1.0.2",
@@ -131,9 +108,7 @@
   "dependencies": {
     "babel-preset-react-hmre": "1.1.1",
     "react": "15.3.0",
-    "react-formal": "0.20.4",
     "react-redux": "4.4.5",
     "redux-batched-subscribe": "0.1.6",
-    "yup": "0.21.1"
   }
 }
