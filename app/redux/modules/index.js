@@ -1,5 +1,3 @@
-import * as app from './app/app';
-import * as posts from './posts/posts';
+import * as app from './app';
 
 export { app };
-export { posts };

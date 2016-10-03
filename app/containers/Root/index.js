@@ -4,13 +4,8 @@ import { connect } from 'react-redux';
 
 import * as actionCreators from 'redux/modules';
 
-import Loading from 'components/Loading';
-import Header from 'components/Header';
-
-/* global styles for app */
-if (__CLIENT__) {
-  require('./styles/app.css');
-}
+// Global styles
+import './styles/app.css';
 
 @connect(
   state => ({ ...state.app }),
@@ -25,38 +20,11 @@ export default class Root extends Component {
     children: PropTypes.object,
     params: PropTypes.object,
     history: PropTypes.object,
-    spinnerAsyncPage: PropTypes.bool,
-    hideSpinnerAsyncPage: PropTypes.func,
   };
 
-  componentDidMount() {
-    const { hideSpinnerAsyncPage } = this.props;
-
-    // for server-side-rendering (if we open async page)
-    // see in /app/redux/modules/app/index.js, this component and /app/route.js
-    hideSpinnerAsyncPage();
-  }
-
-  componentDidUpdate(prevProps) {
-    const { hideSpinnerAsyncPage } = this.props;
-
-    if (prevProps.spinnerAsyncPage === true) {
-      hideSpinnerAsyncPage();
-    }
-  }
-
   render() {
-    const { spinnerAsyncPage } = this.props;
-
     return (
       <section>
-        <Header />
-        {
-          spinnerAsyncPage
-            ? <Loading /> // show spinner for async component
-            : this.props.children &&
-                React.cloneElement(this.props.children, this.props)
-        }
       </section>
     );
   }

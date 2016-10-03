@@ -26,7 +26,7 @@ const apiMiddleware = store => next => action => {
             .then(res => {
               if (action.onSuccess) {
                 action.onSuccess && action.onSuccess(res, store.dispatch);
-              }s
+              }
               resolve(res);
               return res;
             })
